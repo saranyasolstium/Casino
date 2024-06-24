@@ -38,7 +38,6 @@ dependencies:
   get: ^4.6.6
   dropdown_button2: ^2.3.9
   google_fonts: ^6.2.1
-  intl_phone_number_input: ^0.7.4
   country_code_picker: ^3.0.0
 
 dev_dependencies:

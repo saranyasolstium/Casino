@@ -3,17 +3,16 @@ import 'package:casino_web_app/res/colors/app_color.dart';
 import 'package:casino_web_app/res/font_style/style.dart';
 import 'package:casino_web_app/widget/dropdown.dart';
 import 'package:flutter/services.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class ReportScreen extends StatefulWidget {
+  const ReportScreen({Key? key}) : super(key: key);
 
   @override
-  HomeScreenState createState() => HomeScreenState();
+  ReportScreenState createState() => ReportScreenState();
 }
 
-class HomeScreenState extends State<HomeScreen>
+class ReportScreenState extends State<ReportScreen>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
   final ScrollController _scrollController = ScrollController();
@@ -72,67 +71,65 @@ class HomeScreenState extends State<HomeScreen>
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Visibility(
-                              visible: isStartVisible,
-                              child: Row(children: [
-                                Expanded(
-                                  flex: 1,
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      foregroundColor: Colors.white,
-                                      backgroundColor: AppColors.btnColor,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                    ),
-                                    child: const Text('Start'),
-                                  ),
-                                ),
-                                const SizedBox(width: 20),
-                                Expanded(
-                                  flex: 1,
-                                  child: ElevatedButton(
-                                    onPressed: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      foregroundColor: Colors.white,
-                                      backgroundColor: Colors.red[500],
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(5),
-                                      ),
-                                    ),
-                                    child: const Text('Stop'),
-                                  ),
-                                )
-                              ]),
-                            ),
-                            const SizedBox(
-                              height: 10,
-                            ),
-                            Visibility(
-                              visible: !isStartVisible,
-                              child: SizedBox(
-                                width: double.infinity,
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    foregroundColor: Colors.white,
-                                    backgroundColor: AppColors.btnColor,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(5),
-                                    ),
-                                  ),
-                                  child: const Text('Go to new draw'),
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 20),
+                            // Visibility(
+                            //   visible: isStartVisible,
+                            //   child: Row(children: [
+                            //     Expanded(
+                            //       flex: 1,
+                            //       child: ElevatedButton(
+                            //         onPressed: () {
+                            //           Navigator.of(context).pop();
+                            //         },
+                            //         style: ElevatedButton.styleFrom(
+                            //           foregroundColor: Colors.white,
+                            //           backgroundColor: AppColors.btnColor,
+                            //           shape: RoundedRectangleBorder(
+                            //             borderRadius: BorderRadius.circular(5),
+                            //           ),
+                            //         ),
+                            //         child: const Text('Start'),
+                            //       ),
+                            //     ),
+                            //     const SizedBox(width: 20),
+                            //     Expanded(
+                            //       flex: 1,
+                            //       child: ElevatedButton(
+                            //         onPressed: () {
+                            //           Navigator.of(context).pop();
+                            //         },
+                            //         style: ElevatedButton.styleFrom(
+                            //           foregroundColor: Colors.white,
+                            //           backgroundColor: Colors.red[500],
+                            //           shape: RoundedRectangleBorder(
+                            //             borderRadius: BorderRadius.circular(5),
+                            //           ),
+                            //         ),
+                            //         child: const Text('Stop'),
+                            //       ),
+                            //     )
+                            //   ]),
+                            // ),
+
+                            // Visibility(
+                            //   visible: !isStartVisible,
+                            //   child: SizedBox(
+                            //     width: double.infinity,
+                            //     child: ElevatedButton(
+                            //       onPressed: () {
+                            //         Navigator.of(context).pop();
+                            //       },
+                            //       style: ElevatedButton.styleFrom(
+                            //         foregroundColor: Colors.white,
+                            //         backgroundColor: AppColors.btnColor,
+                            //         shape: RoundedRectangleBorder(
+                            //           borderRadius: BorderRadius.circular(5),
+                            //         ),
+                            //       ),
+                            //       child: const Text('Go to new draw'),
+                            //     ),
+                            //   ),
+                            // ),
+                            // const SizedBox(height: 20),
                             Align(
                               alignment: Alignment.topLeft,
                               child: Text(
@@ -166,6 +163,74 @@ class HomeScreenState extends State<HomeScreen>
                               },
                             ),
                             const SizedBox(height: 20),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "Date",
+                                style: zzRegularBlackTextStyle18,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            TextField(
+                              enabled: false,
+                              decoration: InputDecoration(
+                                border: const OutlineInputBorder(),
+                                filled: true,
+                                fillColor: AppColors.background,
+                                hintText: 'Select Date',
+                                hintStyle: zzRegularBlackTextStyle14,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.grey[400] ??
+                                          Colors.transparent,
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.grey[400] ??
+                                          const Color.fromARGB(
+                                              0, 152, 151, 151),
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 20,),
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                "Time",
+                                style: zzRegularBlackTextStyle18,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            TextField(
+                              decoration: InputDecoration(
+                                border: const OutlineInputBorder(),
+                                filled: true,
+                                fillColor: const Color.fromARGB(255, 53, 7, 7),
+                                hintText: 'Select Time',
+                                hintStyle: zzRegularBlackTextStyle14,
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.grey[400] ??
+                                          Colors.transparent,
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                                focusedBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(
+                                      color: Colors.grey[400] ??
+                                          const Color.fromARGB(
+                                              0, 152, 151, 151),
+                                      width: 1.0),
+                                  borderRadius: BorderRadius.circular(4.0),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+
                             Row(
                               children: [
                                 Text(
@@ -440,7 +505,7 @@ class HomeScreenState extends State<HomeScreen>
                                   height: 40,
                                   child: ElevatedButton(
                                     onPressed: () {
-                                      showConfirmationDialog(context);
+                                      showWinningDialog();
                                     },
                                     style: ElevatedButton.styleFrom(
                                       foregroundColor: Colors.white,
@@ -693,160 +758,6 @@ class HomeScreenState extends State<HomeScreen>
           ],
         ),
       ),
-    );
-  }
-
-  void showConfirmationDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          backgroundColor: Colors.white,
-          content: SizedBox(
-            width: double.maxFinite,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                // const SizedBox(height: 20),
-                Flexible(
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: GridView.count(
-                      crossAxisCount: 5,
-                      crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 10.0,
-                      childAspectRatio: 2 / 0.75,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: List.generate(
-                        24,
-                        (index) => Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(
-                                  'No. ',
-                                  style: zzRegularBlackTextStyle14,
-                                ),
-                                Text(
-                                  (index + 1).toString(),
-                                  style: zzRegularBlackTextStyle18.copyWith(
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            SizedBox(height: 10),
-                            Container(
-                              decoration: BoxDecoration(
-                                color: AppColors.textfieldBg,
-                                borderRadius: BorderRadius.circular(4.0),
-                                border: Border.all(
-                                  color: Colors.grey[400] ?? Colors.transparent,
-                                  width: 1.0,
-                                ),
-                              ),
-                              child: Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 5.0, horizontal: 10.0),
-                                    child: Text(
-                                      'Point',
-                                      style: zzRegularBlackTextStyle14,
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 50,
-                                    width: 1,
-                                    decoration:
-                                        BoxDecoration(color: Colors.grey[400]),
-                                  ),
-                                  Expanded(
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 16.0),
-                                      child: TextField(
-                                        keyboardType:
-                                            TextInputType.numberWithOptions(
-                                                decimal: true),
-                                        inputFormatters: <TextInputFormatter>[
-                                          FilteringTextInputFormatter.allow(
-                                              RegExp(r'[0-9]')),
-                                        ],
-                                        decoration: InputDecoration(
-                                          hintText: 'Enter a number',
-                                          hintStyle: zzRegularBlackTextStyle14,
-                                          border: InputBorder.none,
-                                        ),
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                    width: 120,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
-                        foregroundColor: AppColors.btnColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                          side: const BorderSide(color: AppColors.btnColor),
-                        ),
-                      ),
-                      child: const Text('Cancel'),
-                    )),
-                const SizedBox(
-                  width: 20,
-                ),
-                SizedBox(
-                  width: 120,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                      setState(() {
-                        //isStartVisible = false;
-                        //Navigator.pop(context);
-                        showWinningDialog();
-                      });
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppColors.btnColor,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                    child: Text(
-                      'Proceed',
-                      style: GoogleFonts.roboto(color: Colors.white),
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ],
-        );
-      },
     );
   }
 

@@ -1,4 +1,5 @@
 import 'package:casino_web_app/screen/home/home_screen.dart';
+import 'package:casino_web_app/screen/home/report_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,10 +36,10 @@ class MainScreenState extends State<MainScreen>
       appBar: _buildAppBar(),
       body: TabBarView(
         controller: _tabController,
-        children: [
-          const HomeScreen(),
-          _buildReportContent(),
-          const UserScreen(),
+        children: const [
+          HomeScreen(),
+          ReportScreen(),
+          UserScreen(),
         ],
       ),
     );
@@ -128,24 +129,6 @@ class MainScreenState extends State<MainScreen>
         ),
         const SizedBox(width: 20),
       ],
-    );
-  }
-
-  Widget _buildHomeContent() {
-    return const Center(
-      child: Text(
-        'Home Screen Content',
-        style: TextStyle(fontSize: 24),
-      ),
-    );
-  }
-
-  Widget _buildReportContent() {
-    return const Center(
-      child: Text(
-        'Report Screen Content',
-        style: TextStyle(fontSize: 24),
-      ),
     );
   }
 }
