@@ -196,7 +196,9 @@ class ReportScreenState extends State<ReportScreen>
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 20,),
+                            const SizedBox(
+                              height: 20,
+                            ),
                             Align(
                               alignment: Alignment.topLeft,
                               child: Text(
@@ -206,10 +208,11 @@ class ReportScreenState extends State<ReportScreen>
                             ),
                             const SizedBox(height: 10),
                             TextField(
+                              enabled: false,
                               decoration: InputDecoration(
                                 border: const OutlineInputBorder(),
                                 filled: true,
-                                fillColor: const Color.fromARGB(255, 53, 7, 7),
+                                fillColor: AppColors.background,
                                 hintText: 'Select Time',
                                 hintStyle: zzRegularBlackTextStyle14,
                                 enabledBorder: OutlineInputBorder(
@@ -230,132 +233,132 @@ class ReportScreenState extends State<ReportScreen>
                               ),
                             ),
                             const SizedBox(height: 20),
+                            // Row(
+                            //   children: [
+                            //     Text(
+                            //       'Serial no. ',
+                            //       style: zzRegularBlackTextStyle18,
+                            //     ),
+                            //     GestureDetector(
+                            //       onTap: () {
+                            //         setState(() {
+                            //           controllers.add(TextEditingController());
+                            //           focusNodes.add(FocusNode());
+                            //         });
+                            //       },
+                            //       child: Text(
+                            //         '+Add',
+                            //         style: zzRegularBlackTextStyle14.copyWith(
+                            //           decoration: TextDecoration.underline,
+                            //           decorationColor: AppColors.accentColor,
+                            //           color: AppColors.accentColor,
+                            //         ),
+                            //       ),
+                            //     ),
+                            //   ],
+                            // ),
+                            // const SizedBox(height: 20),
+                            // ScrollbarTheme(
+                            //   data: ScrollbarThemeData(
+                            //     thumbVisibility:
+                            //         MaterialStateProperty.all(true),
+                            //     thickness: MaterialStateProperty.all(5.0),
+                            //     thumbColor: MaterialStateProperty.all(
+                            //         AppColors.accentColor),
+                            //   ),
+                            //   child: SizedBox(
+                            //     height: 300,
+                            //     child: ListView(
+                            //       controller: _scrollController,
+                            //       children:
+                            //           controllers.asMap().entries.map((entry) {
+                            //         int index = entry.key;
+                            //         TextEditingController controller =
+                            //             entry.value;
+                            //         FocusNode focusNode = focusNodes[index];
 
-                            Row(
-                              children: [
-                                Text(
-                                  'Serial no. ',
-                                  style: zzRegularBlackTextStyle18,
-                                ),
-                                GestureDetector(
-                                  onTap: () {
-                                    setState(() {
-                                      controllers.add(TextEditingController());
-                                      focusNodes.add(FocusNode());
-                                    });
-                                  },
-                                  child: Text(
-                                    '+Add',
-                                    style: zzRegularBlackTextStyle14.copyWith(
-                                      decoration: TextDecoration.underline,
-                                      decorationColor: AppColors.accentColor,
-                                      color: AppColors.accentColor,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 20),
-                            ScrollbarTheme(
-                              data: ScrollbarThemeData(
-                                thumbVisibility:
-                                    MaterialStateProperty.all(true),
-                                thickness: MaterialStateProperty.all(5.0),
-                                thumbColor: MaterialStateProperty.all(
-                                    AppColors.accentColor),
-                              ),
-                              child: SizedBox(
-                                height: 300,
-                                child: ListView(
-                                  controller: _scrollController,
-                                  children:
-                                      controllers.asMap().entries.map((entry) {
-                                    int index = entry.key;
-                                    TextEditingController controller =
-                                        entry.value;
-                                    FocusNode focusNode = focusNodes[index];
-
-                                    return Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 20),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            const SizedBox(height: 10),
-                                            Text(
-                                              'Ticket serial Number',
-                                              style: zzRegularBlackTextStyle14,
-                                            ),
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                      vertical: 10),
-                                              child: TextField(
-                                                controller: controller,
-                                                focusNode: focusNode,
-                                                onTap: () {
-                                                  setState(() {
-                                                    _setFocus(index);
-                                                    controller.addListener(
-                                                        _onTextChanged);
-                                                  });
-                                                },
-                                                decoration: InputDecoration(
-                                                  hintText:
-                                                      'Enter ticket serial number',
-                                                  hintStyle:
-                                                      zzRegularBlackTextStyle14
-                                                          .copyWith(
-                                                              color:
-                                                                  Colors.grey),
-                                                  filled: true,
-                                                  fillColor: controller
-                                                          .text.isEmpty
-                                                      ? (focusNode.hasFocus
-                                                          ? AppColors
-                                                              .enableInput
-                                                          : AppColors
-                                                              .background)
-                                                      : AppColors.enableInput,
-                                                  border:
-                                                      const OutlineInputBorder(),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: controller
-                                                              .text.isEmpty
-                                                          ? Colors.grey[400] ??
-                                                              Colors.transparent
-                                                          : AppColors
-                                                              .accentColor,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            4.0),
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide:
-                                                        const BorderSide(
-                                                      color:
-                                                          AppColors.accentColor,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            4.0),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ],
-                                        ));
-                                  }).toList(),
-                                ),
-                              ),
-                            )
+                            //         return Padding(
+                            //             padding: const EdgeInsets.symmetric(
+                            //                 horizontal: 20),
+                            //             child: Column(
+                            //               crossAxisAlignment:
+                            //                   CrossAxisAlignment.start,
+                            //               children: [
+                            //                 const SizedBox(height: 10),
+                            //                 Text(
+                            //                   'Ticket serial Number',
+                            //                   style: zzRegularBlackTextStyle14,
+                            //                 ),
+                            //                 Padding(
+                            //                   padding:
+                            //                       const EdgeInsets.symmetric(
+                            //                           vertical: 10),
+                            //                   child: TextField(
+                            //                     controller: controller,
+                            //                     focusNode: focusNode,
+                            //                     onTap: () {
+                            //                       setState(() {
+                            //                         _setFocus(index);
+                            //                         controller.addListener(
+                            //                             _onTextChanged);
+                            //                       });
+                            //                     },
+                            //                     decoration: InputDecoration(
+                            //                       hintText:
+                            //                           'Enter ticket serial number',
+                            //                       hintStyle:
+                            //                           zzRegularBlackTextStyle14
+                            //                               .copyWith(
+                            //                                   color:
+                            //                                       Colors.grey),
+                            //                       filled: true,
+                            //                       fillColor: controller
+                            //                               .text.isEmpty
+                            //                           ? (focusNode.hasFocus
+                            //                               ? AppColors
+                            //                                   .enableInput
+                            //                               : AppColors
+                            //                                   .background)
+                            //                           : AppColors.enableInput,
+                            //                       border:
+                            //                           const OutlineInputBorder(),
+                            //                       enabledBorder:
+                            //                           OutlineInputBorder(
+                            //                         borderSide: BorderSide(
+                            //                           color: controller
+                            //                                   .text.isEmpty
+                            //                               ? Colors.grey[400] ??
+                            //                                   Colors.transparent
+                            //                               : AppColors
+                            //                                   .accentColor,
+                            //                           width: 1.0,
+                            //                         ),
+                            //                         borderRadius:
+                            //                             BorderRadius.circular(
+                            //                                 4.0),
+                            //                       ),
+                            //                       focusedBorder:
+                            //                           OutlineInputBorder(
+                            //                         borderSide:
+                            //                             const BorderSide(
+                            //                           color:
+                            //                               AppColors.accentColor,
+                            //                           width: 1.0,
+                            //                         ),
+                            //                         borderRadius:
+                            //                             BorderRadius.circular(
+                            //                                 4.0),
+                            //                       ),
+                            //                     ),
+                            //                   ),
+                            //                 ),
+                            //               ],
+                            //             ));
+                            //       }).toList(),
+                            //     ),
+                            //   ),
+                            // )
+                          
                           ],
                         ),
                       ),

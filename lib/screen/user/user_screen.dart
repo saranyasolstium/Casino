@@ -73,13 +73,13 @@ class _UserScreenState extends State<UserScreen> {
                                 label: Text('Name',
                                     style: zzRegularBlackTextStyle12)),
                             DataColumn(
+                                label: Text('User ID',
+                                    style: zzRegularBlackTextStyle12)),
+                            DataColumn(
                                 label: Text('Role',
                                     style: zzRegularBlackTextStyle12)),
                             DataColumn(
-                                label: Text('Email',
-                                    style: zzRegularBlackTextStyle12)),
-                            DataColumn(
-                                label: Text('Phone No',
+                                label: Text('Phone number',
                                     style: zzRegularBlackTextStyle12)),
                             DataColumn(
                                 label: Text('Password',
@@ -90,22 +90,22 @@ class _UserScreenState extends State<UserScreen> {
                           ],
                           rows: [
                             DataRow(
-                              color: MaterialStateColor.resolveWith((states) =>
-                                  Colors.white), // White background color
+                              color: MaterialStateColor.resolveWith(
+                                  (states) => Colors.white),
                               cells: [
                                 DataCell(Text('1',
                                     style: zzRegularBlackTextStyle14)),
                                 DataCell(Text('John Doe',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('Admin',
+                                DataCell(Text('123456789',
                                     style: zzRegularBlackTextStyle14)),
                                 DataCell(Text(
-                                  'john.doe@example.com',
+                                  'Staff',
                                   style: zzRegularBlackTextStyle14,
                                 )),
-                                DataCell(Text('123-456-7890',
+                                DataCell(Text('65432109',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('********',
+                                DataCell(Text('Loremipsum',
                                     style: zzRegularBlackTextStyle14)),
                                 DataCell(Row(
                                   children: [
@@ -156,17 +156,17 @@ class _UserScreenState extends State<UserScreen> {
                               cells: [
                                 DataCell(Text('2',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('Jane Smith',
+                                DataCell(Text('Lorem ipsum',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('Manager',
+                                DataCell(Text('123456788',
                                     style: zzRegularBlackTextStyle14)),
                                 DataCell(Text(
-                                  'jane.smith@example.com',
+                                  'Staff',
                                   style: zzRegularBlackTextStyle14,
                                 )),
-                                DataCell(Text('987-654-3210',
+                                DataCell(Text('65789043',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('********',
+                                DataCell(Text('Loremipsum',
                                     style: zzRegularBlackTextStyle14)),
                                 DataCell(Row(
                                   children: [
@@ -211,19 +211,134 @@ class _UserScreenState extends State<UserScreen> {
                               color: MaterialStateColor.resolveWith((states) =>
                                   Colors.white), // White background color
                               cells: [
-                                DataCell(Text('1',
+                                DataCell(Text('3',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('John Doe',
+                                DataCell(Text('Lorem ipsum',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('Admin',
+                                DataCell(Text('123456787',
                                     style: zzRegularBlackTextStyle14)),
                                 DataCell(Text(
-                                  'john.doe@example.com',
+                                  'Admin',
                                   style: zzRegularBlackTextStyle14,
                                 )),
-                                DataCell(Text('123-456-7890',
+                                DataCell(Text('65437896',
                                     style: zzRegularBlackTextStyle14)),
-                                DataCell(Text('********',
+                                DataCell(Text('Loremipsum',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Row(
+                                  children: [
+                                    Container(
+                                      width: 25,
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.btnColor,
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: IconButton(
+                                        icon: const Icon(Icons.edit,
+                                            size: 10, color: Colors.white),
+                                        onPressed: () {
+                                          // Handle edit action
+                                        },
+                                      ),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    Container(
+                                      width: 25,
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: IconButton(
+                                        icon: const Icon(Icons.delete,
+                                            size: 10, color: Colors.white),
+                                        onPressed: () {
+                                          // Handle delete action
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                              ],
+                            ),
+                            DataRow(
+                              color: MaterialStateColor.resolveWith((states) =>
+                                  AppColors
+                                      .background), // Grey background color
+                              cells: [
+                                DataCell(Text('4',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text('Lorem ipsum',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text('123456788',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text(
+                                  'Staff',
+                                  style: zzRegularBlackTextStyle14,
+                                )),
+                                DataCell(Text('65789043',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text('Loremipsum',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Row(
+                                  children: [
+                                    Container(
+                                      width: 25,
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                        color: AppColors.btnColor,
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: IconButton(
+                                        icon: const Icon(Icons.edit,
+                                            size: 10, color: Colors.white),
+                                        onPressed: () {
+                                          // Handle edit action
+                                        },
+                                      ),
+                                    ),
+                                    const SizedBox(width: 10),
+                                    Container(
+                                      width: 25,
+                                      height: 25,
+                                      decoration: BoxDecoration(
+                                        color: Colors.red,
+                                        borderRadius:
+                                            BorderRadius.circular(5.0),
+                                      ),
+                                      child: IconButton(
+                                        icon: const Icon(Icons.delete,
+                                            size: 10, color: Colors.white),
+                                        onPressed: () {
+                                          // Handle delete action
+                                        },
+                                      ),
+                                    ),
+                                  ],
+                                )),
+                              ],
+                            ),
+                            DataRow(
+                              color: MaterialStateColor.resolveWith((states) =>
+                                  Colors.white), // White background color
+                              cells: [
+                                DataCell(Text('5',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text('Lorem ipsum',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text('123456787',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text(
+                                  'Master admin',
+                                  style: zzRegularBlackTextStyle14,
+                                )),
+                                DataCell(Text('65437896',
+                                    style: zzRegularBlackTextStyle14)),
+                                DataCell(Text('Loremipsum',
                                     style: zzRegularBlackTextStyle14)),
                                 DataCell(Row(
                                   children: [
@@ -280,7 +395,7 @@ class _UserScreenState extends State<UserScreen> {
 
   void showAddUserDialog() {
     final TextEditingController nameController = TextEditingController();
-    final TextEditingController emailController = TextEditingController();
+    final TextEditingController userIDController = TextEditingController();
     final TextEditingController phoneController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
     final TextEditingController roleController = TextEditingController();
@@ -349,17 +464,17 @@ class _UserScreenState extends State<UserScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Email Address',
+                          'User ID',
                           style: zzRegularBlackTextStyle14,
                         ),
                         const SizedBox(height: 10),
                         TextField(
-                          controller: emailController,
+                          controller: userIDController,
                           decoration: InputDecoration(
                             border: const OutlineInputBorder(),
                             filled: true,
                             fillColor: AppColors.textfieldBg,
-                            hintText: 'Enter email address',
+                            hintText: 'Enter number',
                             hintStyle: zzRegularBlackTextStyle14,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
